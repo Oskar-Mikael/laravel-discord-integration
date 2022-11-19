@@ -2,10 +2,22 @@
 
 namespace OskarM\LaravelDiscord;
 
+use GuzzleHttp\Client as HttpClient;
+
 class Discord
 {
-    public function works()
+    protected $httpClient;
+
+
+    public function __construct(HttpClient $httpClient)
     {
-        return 'works';
+        $this->httpClient = $httpClient;
+    }
+
+    public function notification(string $webhookUrl, string $message)
+    {
+        return $this->httpClient->request('post', $webhookUrl, [
+            'content' => $message,
+        ]);
     }
 }

@@ -1,0 +1,19 @@
+{
+    "name": "oskar-mikael/laravel-discord-integration",
+    "description": "An integration with Discord for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oskar Boström",
+            "email": "oskar.m.bostrom@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "OskarM\\LaravelDiscord\\": "src/"
+        }
+    },
+    "require": {}
+}

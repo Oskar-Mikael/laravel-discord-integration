@@ -17,7 +17,12 @@ class Discord
     public function notification(string $webhookUrl, string $message)
     {
         return $this->httpClient->request('post', $webhookUrl, [
-            'content' => $message,
+            'headers' => [
+                'content-type' => 'application/json'
+            ],
+            'json' => [
+                'content' => $message,
+            ]
         ]);
     }
 }
